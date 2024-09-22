@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ross Montgomery - Projects</title>
+  <meta name="description"
+    content="todo.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="content/logo.png" />
+  <link rel="stylesheet" href="style/output.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- Start - Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;700&display=swap" rel="stylesheet">
+  <!-- End - Fonts -->
+  <!-- Start - Fancybox Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <!-- End - Fancybox Scripts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      content: ["./dist/*.{html,js}"],
+      theme: {
+        extend:
+                {
+                  fontFamily: {
+                    'nothingyoucoulddo': ['Nothing You Could Do', 'cursive'],
+                    'signika': ['Signika', 'sans-serif'],
+                  },
+                },
+      },
+      plugins: [],
+    }
+  </script>
+</head>
+
+<body
+  class="h-screen text-black dark:text-black px-5 md:px-20 opacity-0 animate-fade-in transition duration-500">
+  <!-- Navbar -->
+  <header class="flex w-full overflow-hidden pt-10 pb-1">
+    <nav id="nav" x-data="{ open: false }" role="navigation" class="w-full">
+      <div class="container mx-auto flex flex-wrap items-center md:flex-no-wrap">
+        <div class="mr-4 md:mr-8">
+          <a href="index.html" class="font-signika text-2xl">THROUGH THE GRAIN</a>
+        </div>
+        <div class="ml-auto md:hidden flex items-center justify-start">
+          <button onclick="menuToggle()" @click="open = !open"
+            class="tap-highlight-transparent text-black dark:text-black w-5 h-5 relative focus:outline-none"
+            @click="open = !open">
+            <span class="sr-only">Open main menu</span>
+            <div class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <span aria-hidden="true"
+                class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+                :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
+              <span aria-hidden="true"
+                class="block absolute  h-0.5 w-5 bg-current   transform transition duration-500 ease-in-out"
+                :class="{'opacity-0': open } "></span>
+              <span aria-hidden="true"
+                class="block absolute h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out"
+                :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
+            </div>
+          </button>
+        </div>
+        <div id="menu"
+          class="w-full h-0 transition-all ease-out duration-500 md:transition-none md:w-auto md:flex-grow md:flex md:items-center">
+          <ul id="ulMenu"
+            class="flex flex-col duration-300 ease-out md:space-x-5 sm:transition-none mt-5 md:flex-row md:items-center md:ml-auto md:mt-0 md:pt-0 md:border-0">
+            <li class="group transition duration-300">
+              <a href="index.html" class="font-signika text-2xl">PHOTOS
+                <span
+                  class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
+              </a>
+            </li>
+            <li class="group transition duration-300">
+              <a href="bythesea.html" class="font-signika text-2xl">PROJECTS
+                <span class="hidden md:block h-0.5 bg-white dark:bg-black"></span>
+              </a>
+            </li>
+            <li class="group transition duration-300">
+              <a href="about.html" class="font-signika text-2xl">ABOUT
+                <span
+                  class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Content -->
+  <div class="container mx-auto">
+    <div>
+      <div id="menu2"
+        class="text-4xl pt-0 pb-8">
+        <ul id="ulMenu2"
+          class="flex flex-col duration-300 ease-out md:space-x-5 sm:transition-none mt-5 md:flex-row md:items-center md:ml-auto md:mt-0 md:pt-0 md:border-0">
+          <li class="group transition duration-300">
+            <a href="bythesea.html" class="font-signika text-sm">BY THE SEA
+              <span class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
+            </a>
+          </li>
+          <li class="group transition duration-300">
+            <a href="lostlight.html" class="font-signika text-sm">LOST LIGHT
+              <span class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>              
+            </a>
+          </li>
+          <li class="group transition duration-300">
+            <a href="alfama.html" class="font-signika text-sm">ALFAMA
+              <span class="hidden md:block h-0.5 bg-white dark:bg-black"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <section class="text-neutral-700">
+      <div class="container w-full">
+        <div class="flex flex-wrap w-full">
+          <!-- Gallery Start -->
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1nKloFZcoGMPhPvh9SX4NKVesEbVgmfSD"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1nKloFZcoGMPhPvh9SX4NKVesEbVgmfSD" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/19amUdwN8N9KTWeeC70alzgquvmoy-H2X"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/19amUdwN8N9KTWeeC70alzgquvmoy-H2X" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1EUClHE-N5EwDs7k-nbJ95YCT8f2FbeV7"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1EUClHE-N5EwDs7k-nbJ95YCT8f2FbeV7" />
+                </a>
+              </div>
+            </div>
+          </div> 
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1xQW7P52E3gtIPHc6yIs7H10TnsuUOeF6"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1xQW7P52E3gtIPHc6yIs7H10TnsuUOeF6" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/14PwMGb3yGFUr7Wm6ZNJ9C0vWRHtcs1ks"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/14PwMGb3yGFUr7Wm6ZNJ9C0vWRHtcs1ks" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1jjoVrmwhhbdjvAGxeieqZaS83_kOprlQ"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1jjoVrmwhhbdjvAGxeieqZaS83_kOprlQ" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1TMti5hJ9x7uCT67QmQkixkhNxh9qk9v4"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1TMti5hJ9x7uCT67QmQkixkhNxh9qk9v4" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1QrI3T-kUPqKRpeA9oIGrPoRs3LWibb7i"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1QrI3T-kUPqKRpeA9oIGrPoRs3LWibb7i" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1k4_v76XkDxQ1J76LcZrX_6ztUBsLo6ND"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1k4_v76XkDxQ1J76LcZrX_6ztUBsLo6ND" />
+                </a>
+              </div>
+            </div>
+          </div> 
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1tVYXaRRDRgN94h-WHCsdMiTDkrydABaA"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1tVYXaRRDRgN94h-WHCsdMiTDkrydABaA" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1n4ct3Mkv3wKvcQce32Kc_Aj6bW5m32IC"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1n4ct3Mkv3wKvcQce32Kc_Aj6bW5m32IC" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1-LiA7gKYJCcIuH40cnqWU3UFy-Mh0VX3"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1-LiA7gKYJCcIuH40cnqWU3UFy-Mh0VX3" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1y6gQ1bXp_cWMrFGOhIhu0c6MN_EFOVTU"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1y6gQ1bXp_cWMrFGOhIhu0c6MN_EFOVTU" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1GqnDKGYhLo9L0HhGO6lczSQBSzkN4YNc"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1GqnDKGYhLo9L0HhGO6lczSQBSzkN4YNc" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1G7PoeH93HqikHkOXvKfrOSEMiBjMT-Bc"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1G7PoeH93HqikHkOXvKfrOSEMiBjMT-Bc" />
+                </a>
+              </div>
+            </div>
+          </div> 
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/15ZmQcyi5W07p3S5QWMR1ED0ojnvY1Oo5"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/15ZmQcyi5W07p3S5QWMR1ED0ojnvY1Oo5" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1C_t7ASttwemEKvabvXQCao2AfKS6Yq0C"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1C_t7ASttwemEKvabvXQCao2AfKS6Yq0C" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1ql202wHi4bYQSGvVvUcdLMPTfCzIre_Z"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1ql202wHi4bYQSGvVvUcdLMPTfCzIre_Z" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1rseGFk75z_ycwb0gf_ok8v0y-rJgOrxS"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1rseGFk75z_ycwb0gf_ok8v0y-rJgOrxS" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1MxnfPFGmIQDL7TZ4y9XgNZRPCD4V6Mev"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1MxnfPFGmIQDL7TZ4y9XgNZRPCD4V6Mev" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/13SIkr5QwGqnayLTlV1eOCaJVy_ZK9rDT"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/13SIkr5QwGqnayLTlV1eOCaJVy_ZK9rDT" />
+                </a>
+              </div>
+            </div>
+          </div> 
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1xo7cxVIE0QSG-bhY2D5GMxcz4DaD12kP"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1xo7cxVIE0QSG-bhY2D5GMxcz4DaD12kP" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1vj_7cwZdQiTt4pLjh1xL1tlacHHPFfaK"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1vj_7cwZdQiTt4pLjh1xL1tlacHHPFfaK" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1gcnqtpk8acDGsww7oEsLTvvrBNEEPeW4"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1gcnqtpk8acDGsww7oEsLTvvrBNEEPeW4" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1wY2fKTSW4AFYWpXasnODQr9UDJ3dzsy-"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1wY2fKTSW4AFYWpXasnODQr9UDJ3dzsy-" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1ekghv00DoRtCZVPysqLZHS1t7kRPvUm7"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1ekghv00DoRtCZVPysqLZHS1t7kRPvUm7" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1Lq1DJn0tJDZI3dHkzVuBKQBqL5yAuTcN"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1Lq1DJn0tJDZI3dHkzVuBKQBqL5yAuTcN" />
+                </a>
+              </div>
+            </div>
+          </div> 
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1S5zYMj8CJnRLIWzsrXijltcDUtoxeZPU"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1S5zYMj8CJnRLIWzsrXijltcDUtoxeZPU" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1jE-5is8IitK3PvMhambAumR2GeLAdSYJ"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1jE-5is8IitK3PvMhambAumR2GeLAdSYJ" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1XzoVoDbszmsrlYtjyHopJSBtsNUSOZaR"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1XzoVoDbszmsrlYtjyHopJSBtsNUSOZaR" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1S6vO0LvO-EgFvDl2DkglM8K19cLIScGR"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1S6vO0LvO-EgFvDl2DkglM8K19cLIScGR" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1MnMUxVKdIbHkEW_ljYFFRQLSXu5iv-gO"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1MnMUxVKdIbHkEW_ljYFFRQLSXu5iv-gO" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/14LziYB-9NSKGZ0Bg9ZA6KsyUAOJZHOzf"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/14LziYB-9NSKGZ0Bg9ZA6KsyUAOJZHOzf" />
+                </a>
+              </div>
+            </div>
+          </div> 
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1antiitb_-gcY_JcBH5IVvzpmfvxTb3Ky"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1antiitb_-gcY_JcBH5IVvzpmfvxTb3Ky" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1X01e7LRpCcPGNyluDxFTC5vQHLtnzntn"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1X01e7LRpCcPGNyluDxFTC5vQHLtnzntn" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/16jR-Pc3R2xReguzpSR1uTgvWj8-PJnr3"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/16jR-Pc3R2xReguzpSR1uTgvWj8-PJnr3" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1rLMGZEgYLu7d7yAMhkBXZ5CdkIZNEknC"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1rLMGZEgYLu7d7yAMhkBXZ5CdkIZNEknC" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1H_ssCDdutvea_OvB2LFECEU5w1nt4oK3"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1H_ssCDdutvea_OvB2LFECEU5w1nt4oK3" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/17_3GTszML0gzgXpnGOLSALv0LeZJG9my"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/17_3GTszML0gzgXpnGOLSALv0LeZJG9my" />
+                </a>
+              </div>
+            </div>
+          </div> 
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1yzuhgBjIEsGZ_49oXtsPwVcEeTsblIhF"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1yzuhgBjIEsGZ_49oXtsPwVcEeTsblIhF" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1VrNv3qKIuuTlxG5lD2N1bLd2_EPLV9AY"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1VrNv3qKIuuTlxG5lD2N1bLd2_EPLV9AY" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/17Gtc7V7AdK_y3XA7qkSp7KsKJ4cT1l5b"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/17Gtc7V7AdK_y3XA7qkSp7KsKJ4cT1l5b" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1BsZ_V_-0_DjmVbzFb7vpmFrWVR1_YN5a"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1BsZ_V_-0_DjmVbzFb7vpmFrWVR1_YN5a" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1wleFrFYRTMD06ZFoQbcPGFmCq2P0uOON"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1wleFrFYRTMD06ZFoQbcPGFmCq2P0uOON" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1kFOdJdg8-7BUz56YuKmPgTk6nkEaF_oU"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1kFOdJdg8-7BUz56YuKmPgTk6nkEaF_oU" />
+                </a>
+              </div>
+            </div>
+          </div> 
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/12KrM2zNP2JVyzHXV5rt1YuMGM9kLVKa8"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/12KrM2zNP2JVyzHXV5rt1YuMGM9kLVKa8" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1w96np-Bd_4y-HqB2ZvqPFEmv3OjgXX6m"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1w96np-Bd_4y-HqB2ZvqPFEmv3OjgXX6m" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1Og3Pt8Tr_CM03DkIaVfWNDbW4fL9_v9h"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1Og3Pt8Tr_CM03DkIaVfWNDbW4fL9_v9h" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1xPCdw2ZSVAOTtcPq4LIx_Rfxh9--2iJB"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1xPCdw2ZSVAOTtcPq4LIx_Rfxh9--2iJB" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1USGYQabYOzAL0jOiHCHxKkxNeSot43z1"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1USGYQabYOzAL0jOiHCHxKkxNeSot43z1" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1Af_N9wsuhcevB_sGuNcdOy-vYMrJMhb0"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1Af_N9wsuhcevB_sGuNcdOy-vYMrJMhb0" />
+                </a>
+              </div>
+            </div>
+          </div> 
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1eipbChw4HuRSlEsUpVxwQ-Ouyw7tCfuq"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1eipbChw4HuRSlEsUpVxwQ-Ouyw7tCfuq" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1DfT0bv4p5l5Kc-R4RyM_yQ2WPzYk2jxz"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1DfT0bv4p5l5Kc-R4RyM_yQ2WPzYk2jxz" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1FUIKHPrgX2yJLsxolmTepxXbR-dx_kUt"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1FUIKHPrgX2yJLsxolmTepxXbR-dx_kUt" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1sfq7czv7Q3ry3y0-IurOUQehXfVbzM7D"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1sfq7czv7Q3ry3y0-IurOUQehXfVbzM7D" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1FLHySoKnLLW55VHiwJYLv8wpQTPAOUh4"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1FLHySoKnLLW55VHiwJYLv8wpQTPAOUh4" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1mgVw1YodTmoB5_H21W-rk5WRJEGXpE05"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1mgVw1YodTmoB5_H21W-rk5WRJEGXpE05" />
+                </a>
+              </div>
+            </div>
+          </div> 
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1OwfxxdWoMYIBMIpZ0vib3xsI_uFQbn_F"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1OwfxxdWoMYIBMIpZ0vib3xsI_uFQbn_F" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1esgq21yZJwMOjLDcRtGddP67vp36onoG"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1esgq21yZJwMOjLDcRtGddP67vp36onoG" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1-qInVWHEbWVr21TEfHZLK8lGmkHCUZXW"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1-qInVWHEbWVr21TEfHZLK8lGmkHCUZXW" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/157kC1gvw3GdKCC8eQl6BS4GYfR_hbZlM"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/157kC1gvw3GdKCC8eQl6BS4GYfR_hbZlM" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1FjSXY067LbeB7pYXweqVX5VWcfFOyppg"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1FjSXY067LbeB7pYXweqVX5VWcfFOyppg" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1CvbG33xBVx9sY2yHcw8fa8oUBXt5KgAB"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1CvbG33xBVx9sY2yHcw8fa8oUBXt5KgAB" />
+                </a>
+              </div>
+            </div>
+          </div> 
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1jorKW8_sg4xmAm_P4OQi9Mytf8SU6fxO"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1jorKW8_sg4xmAm_P4OQi9Mytf8SU6fxO" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1f3cBZIyxS3eVbNbrWTC1jBYXzGZDVUco"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1f3cBZIyxS3eVbNbrWTC1jBYXzGZDVUco" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/15JcxeIaIAREsFyZDJSCF1i07Vvi6ieeY"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/15JcxeIaIAREsFyZDJSCF1i07Vvi6ieeY" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1KJdWYCtreA5DFMLyUssftZBfxYsVgJNu"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1KJdWYCtreA5DFMLyUssftZBfxYsVgJNu" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1UpvmsXPt7Q7UV1uFgxjWI8GRrwrC8bDm"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1UpvmsXPt7Q7UV1uFgxjWI8GRrwrC8bDm" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1-yzrWovNocBK9CUprIvQ0eW_LE6CM0rF"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1-yzrWovNocBK9CUprIvQ0eW_LE6CM0rF" />
+                </a>
+              </div>
+            </div>
+          </div> 
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1d7spJ2BxYtn21tZF4iv-lo49h29lX77q"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1d7spJ2BxYtn21tZF4iv-lo49h29lX77q" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1O_M9aGuKB7eJ9c_FPp3ggDmJ1aTyf2Uy"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1O_M9aGuKB7eJ9c_FPp3ggDmJ1aTyf2Uy" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1wld8vmFGYyILlRwTn42mGVX49OZo4RBQ"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1wld8vmFGYyILlRwTn42mGVX49OZo4RBQ" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1KZVJ-6_p6n6VCQ2mPUPnXJXjcrBeaSsZ"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1KZVJ-6_p6n6VCQ2mPUPnXJXjcrBeaSsZ" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1zFYPiYdesGWJ5SCAtuVG8vp7ck4ncpEf"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1zFYPiYdesGWJ5SCAtuVG8vp7ck4ncpEf" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1jAWzOfrYp1exXEPBeeWH8UH_MeyjXnfo"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1jAWzOfrYp1exXEPBeeWH8UH_MeyjXnfo" />
+                </a>
+              </div>
+            </div>
+          </div> 
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1E_BhI3F8d6KNbC6E1RlZIJoCmYna6Mji"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1E_BhI3F8d6KNbC6E1RlZIJoCmYna6Mji" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1Fd-7X9dJ1gImum7uxYv1AQrRZhl3u18d"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1Fd-7X9dJ1gImum7uxYv1AQrRZhl3u18d" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/10GMIjVTixHPpbpwn9lxtE46RzZIl1v7V"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/10GMIjVTixHPpbpwn9lxtE46RzZIl1v7V" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1AWlOV29GHzk3AvVnUS3a3EqXdniCEndZ"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1AWlOV29GHzk3AvVnUS3a3EqXdniCEndZ" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1w-1-4j5PrMRo0v-pGbv2YUAOktfn3xS0"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1w-1-4j5PrMRo0v-pGbv2YUAOktfn3xS0" />
+                </a>
+              </div>
+            </div>
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/14mlpsHGPHd8gQrUFTcIW9GGx28ASTPDM"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/14mlpsHGPHd8gQrUFTcIW9GGx28ASTPDM" />
+                </a>
+              </div>
+            </div>
+          </div> 
+          <div class="flex w-full md:w-1/2 flex-wrap">
+            <div class="w-full p-1">
+              <div class="overflow-hidden h-full w-full">
+                <a href="https://lh3.googleusercontent.com/d/1PWwynfkz_u0ZJTMtlKQTPPaU3MiUMwEZ"
+                  data-fancybox="gallery">
+                  <img alt=""
+                    class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                    src="https://lh3.googleusercontent.com/d/1PWwynfkz_u0ZJTMtlKQTPPaU3MiUMwEZ" />
+                </a>
+              </div>
+            </div><!-- Gallery End -->
+      </div>
+    </section>
+  </div>
+  <!-- Footer -->
+  <footer>
+    <div class="max-w-screen-xl py-16 mx-auto">
+      <div class="grid grid-cols-1 gap-8 text-center mx-auto">
+        <div>
+          <p class="font-signika mt-4 text-sm text-gray-600 dark:text-gray-300">
+            Through The Grain<br/>Ross Montgomery<br/>London
+          <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">
+          </p>
+          <div class="flex mx-auto">
+            <div class="mx-auto space-x-6 flex mt-8 text-gray-600 dark:text-gray-300">
+              <a class="transition duration-300 hover:opacity-75" href="https://www.instagram.com/ross_monty" target="_blank"
+                rel="noreferrer">
+                <span class="sr-only"> Instagram </span>
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                  <path
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                </svg>
+              </a>
+              <a class="transition duration-300 hover:opacity-75" href="https://www.linkedin.com" target="_blank"
+                rel="noreferrer">
+                <span class="sr-only">LinkedIn</span>
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                  <path
+                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="mt-8 text-xs text-gray-600 dark:text-gray-300 text-center">
+        Copyright © Ross Montgomery
+      </p>
+    </div>
+  </footer>
+  <!-- Script for the LightBox -->
+  <script>
+    Fancybox.bind("[data-fancybox]", {});
+  </script>
+  <script src="style/fade_in.js"></script>
+  <script src="style/menu.js"></script>
+</body>
+
+</html>
