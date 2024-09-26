@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Drive Image Gallery</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    <style>
+        /* Optional styles for layout */
+        .animate-fade-in {
+            opacity: 1 !important;
+        }
+
+        .hover\:scale-110:hover {
+            transform: scale(1.10);
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Image Gallery</h1>
+<div id="gallery" class="flex flex-wrap"></div>
+
+<script>
+    const folderId = '1icWpKENRRVtcfHcxD3OazsAhtpJ2dFDl';  // Replace with your folder ID
+    const apiKey = '';  // Replace with your Google Drive API key
+
+  // Function to create gallery HTML for a batch of images
+  function createImageGroup(images) {
+    return `
+      <div class="flex w-full md:w-1/2 flex-wrap">
+        ${images[0] ? `<div class="w-full md:w-1/2 p-1">
+          <div class="overflow-hidden h-full w-full">
+            <a href="${images[0]}" data-fancybox="gallery">
+              <img alt="" class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110" src="${images[0]}" />
+            </a>
+          </div>
+        </div>` : ''}
+
+        ${images[1] ? `<div class="w-full md:w-1/2 p-1">
+          <div class="overflow-hidden h-full w-full">
+            <a href="${images[1]}" data-fancybox="gallery">
+              <img alt="" class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110" src="${images[1]}" />
+            </a>
+          </div>
+        </div>` : ''}
+
+        ${images[2] ? `<div class="w-full p-1">
+          <div class="overflow-hidden h-full w-full">
+            <a href="${images[2]}" data-fancybox="gallery">
+              <img alt="" class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110" src="${images[2]}" />
+            </a>
+          </div>
+        </div>` : ''}
+      </div>
+
+      <div class="flex w-full md:w-1/2 flex-wrap">
+        ${images[3] ? `<div class="w-full p-1">
+          <div class="overflow-hidden h-full w-full">
+            <a href="${images[3]}" data-fancybox="gallery">
+              <img alt="" class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110" src="${images[3]}" />
+            </a>
+          </div>
+        </div>` : ''}
+
+        ${images[4] ? `<div class="w-full md:w-1/2 p-1">
+          <div class="overflow-hidden h-full w-full">
+            <a href="${images[4]}" data-fancybox="gallery">
+              <img alt="" class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110" src="${images[4]}" />
+            </a>
+          </div>
+        </div>` : ''}
+
+        ${images[5] ? `<div class="w-full md:w-1/2 p-1">
+          <div class="overflow-hidden h-full w-full">
+            <a href="${images[5]}" data-fancybox="gallery">
+              <img alt="" class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110" src="${images[5]}" />
+            </a>
+          </div>
+        </div>` : ''}
+      </div>
+    `;
+  }
+
+  // Function to fetch images from Google Drive and generate the gallery
+  function fetchImages() {
+    const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}&fields=files(id,name,mimeType)`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const files = data.files;
+        console.log("Fetched files:", files); // Debugging log
+
+        if (files && files.length > 0) {
+          const galleryDiv = document.getElementById('gallery');
+          galleryDiv.innerHTML = '';  // Clear existing content
+
+          // Filter out non-image files and generate image URLs
+          let images = files
+            .filter(file => file.mimeType.startsWith('image/'))
+            .map(file => `https://lh3.googleusercontent.com/d/${file.id}`);
+
+          console.log("Filtered image URLs:", images); // Debugging log
+
+          // Loop over images and group them in batches of 6
+          for (let i = 0; i < images.length; i += 6) {
+            const imageBatch = images.slice(i, i + 6);
+            galleryDiv.innerHTML += createImageGroup(imageBatch);
+          }
+        } else {
+          console.log('No images found in this folder.');
+        }
+      })
+      .catch(error => console.error('Error fetching images from Google Drive:', error));
+  }
+
+  // Call the function to load images when the page loads
+  window.onload = fetchImages;
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+</body>
+
+</html>
