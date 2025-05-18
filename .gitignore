@@ -4,3 +4,5 @@
 *.idea/
 # thumbnail cache on Windows
 Thumbs.db
+.vscode
+.node_modules

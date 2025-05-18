@@ -26,7 +26,7 @@
           <a href="index.html" class="font-roslindale text-3xl font-bold">Through The Grain</a>
           <span class="font-roslindale font-bold block">Ross Montgomery</span>
         </div>
-        <div class="ml-auto md:hidden flex items-center justify-start">
+        <div class="ml-auto md:hidden mr-4 flex items-center justify-start">
           <button onclick="menuToggle()" @click="open = !open"
             class="tap-highlight-transparent text-black dark:text-black w-5 h-5 relative focus:outline-none"
             @click="open = !open">
@@ -51,7 +51,7 @@
             class="flex flex-col duration-300 ease-out md:space-x-5 sm:transition-none mt-5 md:flex-row md:items-center md:ml-auto md:mt-0 md:pt-0 md:border-0">
             <li class="group transition duration-300 hidden md:block">
               <a href="strangers.html" class="font-roslindale font-bold tap-highlight-transparent">Portfolio
-                <span class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-black"></span>
+                <span class="hidden md:block h-0.5 bg-black dark:bg-black"></span>
               </a>
             </li>
             <li class="group transition duration-300 md:mr-8 hidden md:block">
@@ -64,7 +64,7 @@
                 <li><a href="strangers.html" class="font-roslindale font-bold">Strangers</a></li>
                 <li><a href="friends.html" class="font-roslindale font-bold">Friends</a></li>
                 <li><a href="pointandshoot.html" class="font-roslindale font-bold">Point and Shoot</a></li>
-                  <li><a class="font-roslindale font-bold"><br/>Projects</a></li>
+                <li><a class="font-roslindale font-bold"><br/>Projects</a></li>
                 <li><a href="bythesea.html" class="font-roslindale font-bold">By The Sea</a></li>
               </ul>
             </li>
@@ -74,10 +74,35 @@
     </nav>
   </header>
   <div class="container mx-auto">
-    <h1 class="text-4xl pt-10 pb-8 font-bold"></h1>
+    <div>
+      <div id="menu2"
+        class="hidden md:block pt-10 pb-8 font-bold md:px-5">
+        <ul id="ulMenu2"
+          class="flex flex-col duration-300 ease-out md:space-x-5 sm:transition-none mt-5 md:flex-row md:items-center md:ml-auto md:mt-0 md:pt-0 md:border-0">
+          <li class="group transition duration-300">
+            <a href="strangers.html" class="font-roslindale font-bold">Strangers
+              <span class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-black"></span>
+            </a>
+          </li>
+          <li class="group transition duration-300">
+            <a href="friends.html" class="font-roslindale font-bold">Friends
+              <span class="hidden md:block h-0.5 bg-black dark:bg-black"></span>
+            </a>
+          </li>
+          <li class="group transition duration-300">
+            <a href="pointandshoot.html" class="font-roslindale font-bold">Point and Shoot
+              <span class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-black"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto">
+    <h1 class="text-4xl pt-10 pb-8 font-bold md:hidden"></h1>
     <section class="text-neutral-700">
       <div class="container w-full">
-        <div id="gallery" class="grid grid-cols-2 gap-10"></div>
+        <div id="gallery" class="flex flex-wrap w-full">
         </div>
       </div>
     </section>
@@ -119,13 +144,13 @@
   </footer>
   <script>
   window.GalleryConfig = {
-    folderId: '1TRg7oKB2QiI7O2tcNN6nBw8gcf_FZwEk',
+    folderId: '1EhSsaNN70CwVWMJbcdohp18bfRJHcrQ0',
     apiKey: 'AIzaSyAO6XBBwROgOacibpgXqfrOiGZtFg8Gy3g'
   };
   </script>
   <script src="src/fade_in.js"></script>
   <script src="src/menu.js"></script>
-  <script src="src/landing_gallery.js"></script>
+  <script src="src/gallery.js"></script>
 </body>
 
 </html>

@@ -338,15 +338,6 @@ menu {
   padding: 0;
 }
 
-projects_menu_ul ul{
-  list-style: none;
-}
-
-projects_menu_ul li{
-  display: inline;
-  padding: 20px;
-}
-
 /*
 Prevent resizing textareas horizontally by default.
 */
@@ -644,6 +635,18 @@ video {
   margin-left: 1.25rem;
 }
 
+.ml-6 {
+  margin-left: 5rem;
+}
+
+.ml-8 {
+  margin-left: 2rem;
+}
+
+.md\:ml-6 {
+  margin-left: 5rem;
+}
+
 .ml-auto {
   margin-left: auto;
 }
@@ -654,6 +657,10 @@ video {
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
 }
 
 .mt-5 {
@@ -693,7 +700,7 @@ video {
 }
 
 .h-32 {
-  height: 8rem;
+  height: 10rem;
 }
 
 .h-5 {
@@ -718,6 +725,13 @@ video {
 
 .max-h-full {
   max-height: 100%;
+}
+
+.max-h-0 {
+  max-height: 0;
+}
+.max-h-screen {
+  max-height: 100vh;
 }
 
 .w-5 {
@@ -832,6 +846,10 @@ video {
   justify-content: flex-start;
 }
 
+.gap-10 {
+  gap: 0.5rem;
+}
+
 .gap-14 {
   gap: 3.5rem;
 }
@@ -922,7 +940,7 @@ video {
 }
 
 .p-2 {
-  padding: 0.25rem;
+  padding: 0.5rem;
 }
 
 .p-2\.5 {
@@ -937,9 +955,18 @@ video {
   padding: 1.25rem;
 }
 
+.p-10 {
+  padding: 3rem;
+}
+
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+
+.px-10 {
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .py-16 {
@@ -980,8 +1007,14 @@ video {
   text-align: center;
 }
 
-.font-nothingyoucoulddo {
-  font-family: Nothing You Could Do, cursive;
+.font-roslindale {
+  font-family: Roslindale, serif;
+  font-style: normal;
+}
+
+.font-roslindale-italic {
+  font-family: 'Roslindale', serif;
+  font-style: italic;
 }
 
 .font-serif {
@@ -990,6 +1023,11 @@ video {
 
 .font-signika {
   font-family: Signika, sans-serif;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .text-2xl {
@@ -1028,7 +1066,7 @@ video {
 }
 
 .font-bold {
-  font-weight: 700;
+  font-weight: 300;
 }
 
 .font-medium {
@@ -1301,6 +1339,10 @@ video {
     margin-right: 2rem;
   }
 
+  .md\:ml-8 {
+    margin-left: 2rem;
+  }
+
   .md\:mt-0 {
     margin-top: 0px;
   }
@@ -1344,7 +1386,7 @@ video {
   .md\:space-x-5 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(1.25rem * var(--tw-space-x-reverse));
-    margin-left: calc(2.25rem * calc(1 - var(--tw-space-x-reverse)));
+    margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .md\:border-0 {
@@ -1352,8 +1394,13 @@ video {
   }
 
   .md\:px-20 {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 16.5rem;
+    padding-right: 16.5rem;
+  }
+
+  .md\:px-5 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 
   .md\:pt-0 {
@@ -1367,4 +1414,12 @@ video {
   .md\:transition-none {
     transition-property: none;
   }
+}
+
+.animate-fade-in {
+  opacity: 1 !important;
+}
+
+.transition-max-height {
+  transition: max-height 0.5s ease-in-out;
 }
