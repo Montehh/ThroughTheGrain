@@ -101,7 +101,7 @@ return html;
 function renderImage(image, colSpanClass) {
 return `
     <div class="${colSpanClass}">
-    <a href="${image.url}" data-fancybox="gallery" data-caption="${image.description}">
+    <a href="${image.url}" data-fancybox="gallery">
         <img src="${image.url}" alt="${image.description}" class="w-full h-full object-cover object-center fade-target" />
     </a>
     </div>
