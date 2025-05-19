@@ -1,14 +1,16 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const body = document.querySelector("body");
-  body.classList.remove("opacity-0");
-  body.classList.add("opacity-100");
-  const photos = document.querySelectorAll("img");
+document.addEventListener("DOMContentLoaded", () => {
+  runFadeIn();
+});
+
+function runFadeIn() {
+  const elements = document.querySelectorAll(".fade-target:not(.fade-in)");
   let delay = 0;
-  photos.forEach((photo) => {
+  elements.forEach((el) => {
     setTimeout(() => {
-      photo.classList.remove("opacity-0");
-      photo.classList.add("opacity-100");
+      el.classList.add("fade-in");
     }, delay);
     delay += 100;
   });
-});
+}
+
+window.runFadeIn = runFadeIn;

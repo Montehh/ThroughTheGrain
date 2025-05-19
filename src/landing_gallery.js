@@ -18,7 +18,8 @@ fetch(url)
             url: `https://lh3.googleusercontent.com/d/${file.id}`,
             name: file.name,
             description: file.description?.trim() || '',
-            starred: file.starred || false
+            starred: file.starred || false,
+            createdTime: new Date(file.createdTime)
         }))
         .sort((a, b) => {
             const numA = parseInt(a.description);
@@ -27,13 +28,13 @@ fetch(url)
             const isNumB = !isNaN(numB);
 
             if (isNumA && isNumB) {
-            return numA - numB;
+                return numA - numB;
             } else if (isNumA) {
-            return -1;
+                return -1;
             } else if (isNumB) {
-            return 1;
+                return 1;
             } else {
-            return 0;
+                return b.createdTime - a.createdTime;
             }
         });
 
@@ -59,9 +60,10 @@ const promises = images.map(image => {
 });
 
 Promise.all(promises).then(imagesWithOrientation => {
-    const galleryDiv = document.getElementById('gallery');
-    galleryDiv.innerHTML = buildLayoutHTML(imagesWithOrientation);
-    Fancybox.bind("[data-fancybox]", {});
+const galleryDiv = document.getElementById('gallery');
+galleryDiv.innerHTML = buildLayoutHTML(imagesWithOrientation);
+  Fancybox.bind("[data-fancybox]", {});
+  if (window.runFadeIn) runFadeIn();
 });
 }
 
@@ -100,7 +102,7 @@ function renderImage(image, colSpanClass) {
 return `
     <div class="${colSpanClass}">
     <a href="${image.url}" data-fancybox="gallery" data-caption="${image.description}">
-        <img src="${image.url}" alt="${image.description}" class="w-full h-full object-cover object-center opacity-0 animate-fade-in transition duration-500" />
+        <img src="${image.url}" alt="${image.description}" class="w-full h-full object-cover object-center fade-target" />
     </a>
     </div>
 `;

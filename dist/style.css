@@ -1423,3 +1423,12 @@ video {
 .transition-max-height {
   transition: max-height 0.5s ease-in-out;
 }
+
+.fade-target {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.fade-in {
+  opacity: 1;
+}

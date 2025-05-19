@@ -8,35 +8,34 @@ function createImageGroup(images) {
     <div class="flex w-full md:w-1/2 flex-wrap">
       ${images[0] ? `<div class="w-full md:w-1/2 p-1"><div class="overflow-hidden h-full w-full">
         <a href="${images[0]}" data-fancybox="gallery">
-          <img alt="" class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110" src="${images[0]}" />
+          <img alt="" class="block h-full w-full object-cover object-center fade-target transform scale-100" src="${images[0]}" />
         </a></div></div>` : ''}
       ${images[1] ? `<div class="w-full md:w-1/2 p-1"><div class="overflow-hidden h-full w-full">
         <a href="${images[1]}" data-fancybox="gallery">
-          <img alt="" class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110" src="${images[1]}" />
+          <img alt="" class="block h-full w-full object-cover object-center fade-target transform scale-100" src="${images[1]}" />
         </a></div></div>` : ''}
       ${images[2] ? `<div class="w-full p-1"><div class="overflow-hidden h-full w-full">
         <a href="${images[2]}" data-fancybox="gallery">
-          <img alt="" class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110" src="${images[2]}" />
+          <img alt="" class="block h-full w-full object-cover object-center fade-target transform scale-100" src="${images[2]}" />
         </a></div></div>` : ''}
     </div>
     <div class="flex w-full md:w-1/2 flex-wrap">
       ${images[3] ? `<div class="w-full p-1"><div class="overflow-hidden h-full w-full">
         <a href="${images[3]}" data-fancybox="gallery">
-          <img alt="" class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110" src="${images[3]}" />
+          <img alt="" class="block h-full w-full object-cover object-center fade-target transform scale-100" src="${images[3]}" />
         </a></div></div>` : ''}
       ${images[4] ? `<div class="w-full md:w-1/2 p-1"><div class="overflow-hidden h-full w-full">
         <a href="${images[4]}" data-fancybox="gallery">
-          <img alt="" class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110" src="${images[4]}" />
+          <img alt="" class="block h-full w-full object-cover object-center fade-target transform scale-100" src="${images[4]}" />
         </a></div></div>` : ''}
       ${images[5] ? `<div class="w-full md:w-1/2 p-1"><div class="overflow-hidden h-full w-full">
         <a href="${images[5]}" data-fancybox="gallery">
-          <img alt="" class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110" src="${images[5]}" />
+          <img alt="" class="block h-full w-full object-cover object-center fade-target transform scale-100" src="${images[5]}" />
         </a></div></div>` : ''}
     </div>
   `;
 }
 
-// Extract leading number from description string (e.g. "12 - Sunset")
 function extractNumberFromDescription(description) {
   const match = description && description.match(/^(\d+)/);
   return match ? parseInt(match[1], 10) : null;
@@ -67,7 +66,7 @@ function fetchImages() {
             } else if (bNum !== null) {
               return 1;
             } else {
-              return new Date(a.modifiedTime) - new Date(b.modifiedTime);
+              return new Date(b.modifiedTime) - new Date(a.modifiedTime);
             }
           })
           .map(file => `https://lh3.googleusercontent.com/d/${file.id}`);
@@ -76,11 +75,24 @@ function fetchImages() {
           const imageBatch = sortedImages.slice(i, i + 6);
           galleryDiv.innerHTML += createImageGroup(imageBatch);
         }
+        triggerFadeIn();
       } else {
         console.log('No images found in this folder.');
       }
     })
     .catch(error => console.error('Error fetching images from Google Drive:', error));
+}
+
+function triggerFadeIn() {
+  const photos = document.querySelectorAll("#gallery img.fade-target");
+
+  let delay = 0;
+  photos.forEach((photo) => {
+    setTimeout(() => {
+      photo.classList.add("fade-in");
+    }, delay);
+    delay += 100;
+  });
 }
 
 window.onload = fetchImages;
