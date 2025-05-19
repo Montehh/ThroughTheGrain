@@ -18,7 +18,7 @@
 </head>
 
 <body
-  class="h-screen text-black dark:text-black px-5 md:px-20 opacity-0 animate-fade-in transition duration-500">
+  class="h-screen text-black dark:text-black px-5 md:px-20 opacity-0 fade-target transition duration-500">
   <header class="flex w-full overflow-hidden pt-10 md:px-5">
     <nav id="nav" x-data="{ open: false }" role="navigation" class="w-full">
       <div class="container mx-auto flex flex-wrap items-center md:flex-no-wrap">
@@ -51,7 +51,7 @@
             class="flex flex-col duration-300 ease-out md:space-x-5 sm:transition-none mt-5 md:flex-row md:items-center md:ml-auto md:mt-0 md:pt-0 md:border-0">
             <li class="group transition duration-300 hidden md:block">
               <a href="strangers.html" class="font-roslindale font-bold tap-highlight-transparent">Portfolio
-                <span class="hidden md:block h-0.5 bg-black dark:bg-black"></span>
+                <span class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-black"></span>
               </a>
             </li>
             <li class="group transition duration-300 md:mr-8 hidden md:block">
@@ -79,35 +79,10 @@
     </nav>
   </header>
   <div class="container mx-auto">
-    <div>
-      <div id="menu2"
-        class="hidden md:block pt-10 pb-8 font-bold md:px-5">
-        <ul id="ulMenu2"
-          class="flex flex-col duration-300 ease-out md:space-x-5 sm:transition-none mt-5 md:flex-row md:items-center md:ml-auto md:mt-0 md:pt-0 md:border-0">
-          <li class="group transition duration-300">
-            <a href="strangers.html" class="font-roslindale font-bold">Strangers
-              <span class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-black"></span>
-            </a>
-          </li>
-          <li class="group transition duration-300">
-            <a href="friends.html" class="font-roslindale font-bold">Friends
-              <span class="hidden md:block h-0.5 bg-black dark:bg-black"></span>
-            </a>
-          </li>
-          <li class="group transition duration-300">
-            <a href="pointandshoot.html" class="font-roslindale font-bold">Point and Shoot
-              <span class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-black"></span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="container mx-auto">
-    <h1 class="text-4xl pt-10 pb-8 font-bold md:hidden"></h1>
+    <h1 class="text-4xl pt-10 pb-8 font-bold"></h1>
     <section class="text-neutral-700">
-      <div class="container w-full">
-        <div id="gallery" class="flex flex-wrap w-full">
+      <div class="container w-full md:px-10">
+        <div id="gallery" class="grid grid-cols-2 gap-10"></div>
         </div>
       </div>
     </section>
@@ -149,13 +124,13 @@
   </footer>
   <script>
   window.GalleryConfig = {
-    folderId: '1EhSsaNN70CwVWMJbcdohp18bfRJHcrQ0',
+    folderId: '1TRg7oKB2QiI7O2tcNN6nBw8gcf_FZwEk',
     apiKey: 'AIzaSyAO6XBBwROgOacibpgXqfrOiGZtFg8Gy3g'
   };
   </script>
   <script src="src/fade_in.js"></script>
   <script src="src/menu.js"></script>
-  <script src="src/gallery.js"></script>
+  <script src="src/landing_gallery.js"></script>
 </body>
 
 </html>

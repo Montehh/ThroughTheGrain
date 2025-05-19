@@ -846,6 +846,11 @@ video {
   justify-content: flex-start;
 }
 
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
 .gap-10 {
   gap: 0.5rem;
 }
@@ -1426,7 +1431,7 @@ video {
 
 .fade-target {
   opacity: 0;
-  transition: opacity 1.5s ease;
+  transition: opacity 3.5s ease;
 }
 
 .fade-in {
